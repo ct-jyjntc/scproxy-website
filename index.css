@@ -28,10 +28,12 @@
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease forwards;
+  animation-fill-mode: both; /* prevents flash when a delay is applied */
 }
 
 .animate-fade-in-down {
   animation: fade-in-down 0.8s ease forwards;
+  animation-fill-mode: both; /* prevents flash when a delay is applied */
 }
 
 .animation-delay-300 {
@@ -46,6 +48,35 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Optimize scroll-triggered animations to avoid transform conflicts */
+.animate-on-scroll {
+  will-change: opacity, transform;
+  transform: translate3d(0, 16px, 0);
+}
+
+.animate-on-scroll.is-visible {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Motion safety and conflict avoidance */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animated-blob,
+  .animate-gradient-border,
+  .scanline,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-fade-in-details {
+    animation: none !important;
   }
 }
 
