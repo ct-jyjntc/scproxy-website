@@ -1,0 +1,22 @@
+<footer class="bg-gray-100 dark:bg-black/20 border-t border-gray-200/80 dark:border-gray-800/50">
+  <div class="container mx-auto px-6 py-6 text-center text-gray-500 dark:text-gray-500 text-sm">
+    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+      <p>&copy; {{ currentYear }} Rainflow TB Limited. {{ languageService.t('copyright')() }}</p>
+      <div class="flex items-center space-x-4">
+        <a [routerLink]="['/terms']" class="inline-flex items-center gap-1 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+          </svg>
+          {{ languageService.t('terms_of_service')() }}
+        </a>
+        <span class="text-gray-400 dark:text-gray-600">|</span>
+        <a [routerLink]="['/privacy']" class="inline-flex items-center gap-1 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-7.5-6L7.5 3.75 12 3l4.5.75 4.5 3.75v6.75a9 9 0 01-9 9 9 9 0 01-9-9V6.75l4.5-3z" />
+          </svg>
+          {{ languageService.t('privacy_policy')() }}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
