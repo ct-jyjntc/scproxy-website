@@ -5,7 +5,29 @@ export type Language = 'en' | 'zh';
 const translations = {
   // Header
   'product_overview': { en: 'Product Overview', zh: '产品概览' },
+  'pricing': { en: 'Pricing', zh: '价格' },
   'downloads': { en: 'Downloads', zh: '下载' },
+
+  // Pricing
+  'pricing_title': { en: 'Simple, Transparent Pricing', zh: '简单透明的价格' },
+  'pricing_subtitle': { en: 'Choose the plan that fits your needs. No hidden fees.', zh: '选择最适合您的方案。无隐藏费用。' },
+  'plan_monthly': { en: 'Monthly', zh: '月付' },
+  'price_monthly': { en: '$9.99', zh: '¥68' },
+  'period_monthly': { en: '/month', zh: '/月' },
+  'plan_yearly': { en: 'Yearly', zh: '年付' },
+  'price_yearly': { en: '$99.99', zh: '¥680' },
+  'period_yearly': { en: '/year', zh: '/年' },
+  'plan_lifetime': { en: 'Lifetime', zh: '终身' },
+  'price_lifetime': { en: '$299.99', zh: '¥1980' },
+  'period_lifetime': { en: 'one-time', zh: '一次性' },
+  'get_started': { en: 'Get Started', zh: '立即开始' },
+  'most_popular': { en: 'Most Popular', zh: '最受欢迎' },
+  'feature_all_servers': { en: 'Access to all servers', zh: '访问所有服务器' },
+  'feature_high_speed': { en: 'High-speed connection', zh: '高速连接' },
+  'feature_no_logs': { en: 'No-logs policy', zh: '无日志政策' },
+  'feature_devices': { en: '5 devices supported', zh: '支持 5 台设备' },
+  'feature_support': { en: '24/7 Support', zh: '24/7 技术支持' },
+  'feature_save': { en: 'Save 17%', zh: '节省 17%' },
 
   // Home
   'home_title': { en: 'Ride the Digital Phantom', zh: '驰骋于数字魅影' },

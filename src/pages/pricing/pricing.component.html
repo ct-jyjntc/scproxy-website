@@ -1,0 +1,44 @@
+<div class="container mx-auto px-6 py-16">
+  <div class="max-w-4xl mx-auto text-center animate-on-scroll" appObserveElement>
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-3">{{ languageService.t('pricing_title')() }}</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400">{{ languageService.t('pricing_subtitle')() }}</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto items-center">
+    @for(plan of plans; track plan.id; let i = $index) {
+      <div appObserveElement class="animate-on-scroll relative flex flex-col p-8 bg-white dark:bg-gray-900 border rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+           [class]="plan.popular ? 'border-cyan-500 shadow-lg shadow-cyan-500/10 z-10 scale-105' : 'border-gray-200 dark:border-gray-800'"
+           [style.transition-delay]="i * 100 + 'ms'">
+        
+        @if(plan.popular) {
+          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-cyan-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md">
+            {{ languageService.t('most_popular')() }}
+          </div>
+        }
+
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">{{ languageService.t(plan.nameKey)() }}</h3>
+        
+        <div class="flex items-baseline mb-8">
+          <span class="text-4xl font-bold text-slate-900 dark:text-white">{{ languageService.t(plan.priceKey)() }}</span>
+          <span class="text-gray-500 dark:text-gray-400 ml-2">{{ languageService.t(plan.periodKey)() }}</span>
+        </div>
+
+        <ul class="space-y-4 mb-8 flex-1">
+          @for(feature of plan.features; track feature) {
+            <li class="flex items-center text-gray-600 dark:text-gray-300">
+              <svg class="w-5 h-5 text-cyan-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              {{ languageService.t(feature)() }}
+            </li>
+          }
+        </ul>
+
+        <button class="w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
+                [class]="plan.popular ? 'bg-cyan-500 text-white hover:bg-cyan-400 shadow-lg shadow-cyan-500/25' : 'bg-gray-100 dark:bg-gray-800 text-slate-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'">
+          {{ languageService.t('get_started')() }}
+        </button>
+      </div>
+    }
+  </div>
+</div>
