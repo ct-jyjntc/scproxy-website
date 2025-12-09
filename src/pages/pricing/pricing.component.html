@@ -34,10 +34,10 @@
           }
         </ul>
 
-        <button class="w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
+        <a [routerLink]="['/downloads']" class="block text-center w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
                 [class]="plan.popular ? 'bg-cyan-500 text-white hover:bg-cyan-400 shadow-lg shadow-cyan-500/25' : 'bg-gray-100 dark:bg-gray-800 text-slate-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'">
           {{ languageService.t('get_started')() }}
-        </button>
+        </a>
       </div>
     }
   </div>
