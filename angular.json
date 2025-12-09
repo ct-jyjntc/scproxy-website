@@ -18,7 +18,14 @@
             },
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json",
-            "styles": ["index.css"]
+            "styles": ["index.css"],
+            "assets": [
+              {
+                "input": "src/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ]
           },
           "configurations": {
             "production": {
